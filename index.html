@@ -1,11 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Exercise 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
 </head>
 <body>
-    <center>
-        <h1>Kalkulator</h1>
-    </center>
+    <div  class="container mt-5 border border-danger shadow-lg p-3 mb-5 rounded text-center " style="width: 30%; background-color:teal">
+        <form id="kalkulator">
+            <h3 style="color: white">Calculator</h3>
+                <p style="color: white"> Masukkan angka 1:
+                   <input type="text" id="angka1">
+                   <br><br>
+                   Masukkan angka 2:
+                   <input type="text" id="angka2">
+                </p>
+             </form>
+             
+             <button type="button" class="btn btn-light" onclick="kali()">
+                <p>&#215;</p>
+             </button>
+             <button type="button" class="btn btn-light" onclick="bagi()">
+                <p>&#247;</p>
+             </button>
+             <button type="button" class="btn btn-light" onclick="tambah()">
+                <p>&#43;</p>
+             </button>
+             <br><br>
+             <button type="button" class="btn btn-light" onclick="kurang()">
+                <p>&#8722;</p>
+             </button>
+             <button type="button" class="btn btn-light" onclick="mod()">
+                <p>%</p>
+             </button>
+             <button type="button" class="btn btn-light" onclick="pangkat()">
+                <p>x&#178;</p>
+             </button>
+             
+             <p class="container mt-2 border border-success" style="background-color:green; width: 40%; color: white" id="hasilCal">Masukkan Angka</p>
+    </div>
+    
+<script>
+var kali = () => {
+    var angkaSatu = parseInt(document.getElementById("angka1").value)
+    var angkaDua = parseInt(document.getElementById("angka2").value)
+ 
+    var resX = angkaSatu * angkaDua
+    var hasilCal = document.getElementById("hasilCal")
+    hasilCal.innerHTML = `${angkaSatu} X ${angkaDua} = ${resX}`
+ }
+ 
+ var bagi = () => {
+    var angkaSatu = parseInt(document.getElementById("angka1").value)
+    var angkaDua = parseInt(document.getElementById("angka2").value)
+ 
+    var resBagi = angkaSatu / angkaDua
+    var hasilCal = document.getElementById("hasilCal")
+    hasilCal.innerHTML = `${angkaSatu} / ${angkaDua} = ${resBagi}`
+ }
+ 
+ var tambah = () => {
+    var angkaSatu = parseInt(document.getElementById("angka1").value)
+    var angkaDua = parseInt(document.getElementById("angka2").value)
+ 
+    var resTambah = angkaSatu + angkaDua
+    var hasilCal = document.getElementById("hasilCal")
+    hasilCal.innerHTML = `${angkaSatu} + ${angkaDua} = ${resTambah}`
+ }
+ 
+ var kurang = () => {
+    var angkaSatu = parseInt(document.getElementById("angka1").value)
+    var angkaDua = parseInt(document.getElementById("angka2").value)
+ 
+    var resKurang = angkaSatu - angkaDua
+    var hasilCal = document.getElementById("hasilCal")
+    hasilCal.innerHTML = `${angkaSatu} - ${angkaDua} = ${resKurang}`
+ }
+ 
+ var mod = () => {
+    var angkaSatu = Number(document.getElementById("angka1").value)
+    var angkaDua = Number(document.getElementById("angka2").value)
+ 
+    var resMod = angkaSatu % angkaDua
+    var hasilCal = document.getElementById("hasilCal")
+    hasilCal.innerHTML = `${angkaSatu} % ${angkaDua} = ${resMod}`
+ }
+ 
+ var pangkat = () => {
+    var angkaSatu = parseInt(document.getElementById("angka1").value)
+    var angkaDua = parseInt(document.getElementById("angka2").value)
+ 
+    var resPangkat = Math.pow(angkaSatu, angkaDua)
+    var hasilCal = document.getElementById("hasilCal")
+    hasilCal.innerHTML = `${angkaSatu}<sup>${angkaDua}</sup> = ${resPangkat}`
+ }
+</script>   
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
